@@ -1,0 +1,7 @@
+{
+  "extends": "react-app",
+  "rules": {
+    // nextjs Link 안에 a 태그
+    "jsx-a11y/anchor-is-valid": "off"
+  }
+}
