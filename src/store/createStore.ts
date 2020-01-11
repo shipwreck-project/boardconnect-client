@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reducer from 'store/reducer';
+import { MakeStoreOptions } from 'next-redux-wrapper';
 import rootSaga from 'saga';
 
-const cs = (initialState: StoreState) => {
+const cs = (initialState: StoreState, { isServer, req }: MakeStoreOptions) => {
   const sagaMiddleware = createSagaMiddleware();
 
   const store = createStore(
@@ -12,7 +13,9 @@ const cs = (initialState: StoreState) => {
     applyMiddleware(sagaMiddleware),
   );
 
-  (store as any).sagaTask = sagaMiddleware.run(rootSaga);
+  if (req || !isServer) {
+    (store as any).sagaTask = sagaMiddleware.run(rootSaga);
+  }
 
   return store;
 };
