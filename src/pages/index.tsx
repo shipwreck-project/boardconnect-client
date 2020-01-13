@@ -1,12 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import { Typography } from 'antd';
+
+const { Title } = Typography;
 
 const HomePage = () => {
   return (
     <div>
-      <h1>난파선</h1>
+      <Title>난파선</Title>
       <Link href="/count">
-        <a>example</a>
+        <a>count</a>
       </Link>
     </div>
   );

@@ -2,36 +2,45 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NextPage } from 'next';
 import { NextJSContext } from 'next-redux-wrapper';
-import styled from '@emotion/styled';
+import { Button, Typography, Icon, message } from 'antd';
 import { increase, decrease, getRandomNumber } from 'store/count';
+import Link from 'next/link';
 
 type Props = {
   isServer: boolean;
 };
-// style test
-const Button = styled.button`
-  width: 120px;
-  line-height: 30px;
-  background-color: white;
-  border: 1px solid black;
-  margin-right: 10px;
-  cursor: pointer;
 
-  &:hover {
-    opacity: 0.5;
-  }
-`;
+const { Title } = Typography;
 
 const CountPage: NextPage<Props> = ({ isServer }) => {
   const { count, isLoading } = useSelector((state: StoreState) => state.count);
   const dispatch = useDispatch();
   const text = isServer ? '서버' : '클라이언트';
+
+  const handleClick = (type: 'increase' | 'decrease') => () => {
+    dispatch(type === 'increase' ? increase() : decrease());
+    message.info(type);
+  };
+
   return (
     <div>
-      <h1>{`${text} 사이드 getInitialProps`}</h1>
-      <h2>{isLoading ? '...loading' : count}</h2>
-      <Button onClick={() => dispatch(increase())}>+</Button>
-      <Button onClick={() => dispatch(decrease())}>-</Button>
+      <div>
+        <Title>{`${text} 사이드 getInitialProps`}</Title>
+        <Title level={3}>{isLoading ? '...loading' : count}</Title>
+        <Button.Group size="large">
+          <Button type="primary" onClick={handleClick('increase')}>
+            Increase <Icon type="up" />
+          </Button>
+          <Button type="danger" onClick={handleClick('decrease')}>
+            Decrease <Icon type="down" />
+          </Button>
+        </Button.Group>
+      </div>
+      <div>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+      </div>
     </div>
   );
 };

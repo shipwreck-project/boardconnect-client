@@ -25,7 +25,14 @@ class App extends NextApp<AppProps> {
     const { Component, pageProps, store } = this.props;
     return (
       <Provider store={store}>
-        <Component {...pageProps} />
+        <div
+          style={{
+            marginTop: 200,
+            textAlign: 'center',
+          }}
+        >
+          <Component {...pageProps} />
+        </div>
       </Provider>
     );
   }
