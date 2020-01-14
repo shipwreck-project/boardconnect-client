@@ -59,5 +59,4 @@ module.exports = withLess({
 
     return config;
   },
-  target: 'serverless',
 });
