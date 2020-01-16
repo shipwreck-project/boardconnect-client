@@ -12,7 +12,7 @@
 - [x] Next.js
 - [x] emotion.js
 - [x] husky ( type, eslint, prettier, commit message)
-- [ ] Jest, react-testing-library
+- [x] Jest, react-testing-library
 - [ ] cypress.io
 - [ ] Github Actions
 
