@@ -23,7 +23,7 @@ const CountPage: NextPage<Props> = ({ isServer }) => {
   };
 
   return (
-    <div>
+    <div data-testid="CountPage">
       <div>
         <Title>{`${text} 사이드 getInitialProps`}</Title>
         <Title level={3}>{isLoading ? '...loading' : count}</Title>
