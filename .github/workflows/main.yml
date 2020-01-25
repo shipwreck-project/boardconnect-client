@@ -13,3 +13,8 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v1
+        with:
+          start: npm build && npm start
+          wait-on: $CYPRESS_baseUrl
+        env:
+          CYPRESS_baseUrl: ${{ secrets.CYPRESS_baseUrl }}
