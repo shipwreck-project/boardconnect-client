@@ -8,7 +8,8 @@
     "type-check": "tsc --noEmit",
     "test": "jest",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "cypress:ci": "next build && start-server-and-test start $CYPRESS_baseUrl cypress:run"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
@@ -39,8 +40,8 @@
     "@typescript-eslint/parser": "^2.14.0",
     "@zeit/next-less": "^1.0.1",
     "babel-eslint": "^10.0.3",
-    "cypress": "^3.8.2",
     "babel-plugin-import": "^1.13.0",
+    "cypress": "^3.8.2",
     "eslint": "^6.8.0",
     "eslint-config-react-app": "^5.1.0",
     "eslint-plugin-flowtype": "^3.13.0",
@@ -55,6 +56,7 @@
     "lint-staged": "^9.5.0",
     "null-loader": "^3.0.0",
     "prettier": "^1.19.1",
+    "start-server-and-test": "^1.10.7",
     "ts-loader": "^6.2.1",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.7.4"

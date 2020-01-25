@@ -6,7 +6,7 @@ const { Title } = Typography;
 
 const HomePage = () => {
   return (
-    <div>
+    <div data-testid="HomePage">
       <Title>난파선</Title>
       <Link href="/count">
         <a>count</a>
