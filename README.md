@@ -1,4 +1,4 @@
-## ?
+## Board Connect Client
 
 ???
 
@@ -13,7 +13,7 @@
 - [x] emotion.js
 - [x] husky ( type, eslint, prettier, commit message)
 - [x] Jest, react-testing-library
-- [ ] cypress.io
+- [x] cypress.io
 - [ ] Github Actions
 
 ## Convention
