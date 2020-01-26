@@ -13,7 +13,7 @@ jobs:
         with:
           build: npm run build
           start: npm start
-          wait-on: http://localhost:3000
+          wait-on: '${{ secrets.CYPRESS_baseUrl }}'
           record: true
         env:
           CYPRESS_baseUrl: ${{ secrets.CYPRESS_baseUrl }}
