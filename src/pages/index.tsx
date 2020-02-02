@@ -11,6 +11,9 @@ const HomePage = () => {
       <Link href="/count">
         <a>count</a>
       </Link>
+      <Link href="/game">
+        <a>game</a>
+      </Link>
     </div>
   );
 };

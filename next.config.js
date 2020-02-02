@@ -59,4 +59,7 @@ module.exports = withLess({
 
     return config;
   },
+  env: {
+    BOARDGAME_API_KEY: process.env.BOARDGAME_API_KEY,
+  },
 });
