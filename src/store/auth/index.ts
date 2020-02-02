@@ -4,7 +4,7 @@ import * as AuthApi from 'api/auth';
 import { createEntity } from 'utils/redux';
 
 /* states */
-export type Auth = {
+export type AuthState = {
   status: Status;
   response?: {
     user: User;
@@ -12,7 +12,7 @@ export type Auth = {
   error?: any;
 };
 
-const initialState: Auth = {
+const initialState: AuthState = {
   status: 'INIT',
   response: undefined,
 };

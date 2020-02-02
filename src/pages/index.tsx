@@ -8,12 +8,17 @@ const HomePage = () => {
   return (
     <div data-testid="HomePage">
       <Title>난파선</Title>
-      <Link href="/count">
-        <a>count</a>
-      </Link>
-      <Link href="/game">
-        <a>game</a>
-      </Link>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <Link href="/count">
+          <a>count</a>
+        </Link>
+        <Link href="/game">
+          <a>game</a>
+        </Link>
+        <Link href="/login">
+          <a>login</a>
+        </Link>
+      </div>
     </div>
   );
 };
