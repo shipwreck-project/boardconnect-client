@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NextPage } from 'next';
 import { List, Card } from 'antd';
 import debounce from 'lodash.debounce';
-import { NextJSContext } from 'next-redux-wrapper';
 import { searchGame } from 'store/game';
 
 const { Meta } = Card;
@@ -42,14 +41,6 @@ const GamePage: NextPage = () => {
       />
     </>
   );
-};
-
-GamePage.getInitialProps = (context: NextJSContext) => {
-  const { isServer } = context;
-
-  return {
-    isServer,
-  };
 };
 
 export default GamePage;
