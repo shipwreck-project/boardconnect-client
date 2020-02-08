@@ -6,15 +6,12 @@ import { createEntity } from 'utils/redux';
 /* states */
 export type AuthState = {
   status: Status;
-  response?: {
-    user: User;
-  };
   error?: any;
+  user?: User;
 };
 
 const initialState: AuthState = {
   status: 'INIT',
-  response: undefined,
 };
 
 /* actions */
@@ -32,7 +29,7 @@ export default createReducer(initialState, builder => {
     })
     .addCase(entity.success, (state, action) => {
       state.status = 'SUCCESS';
-      state.response = action.payload;
+      state.user = action.payload.user;
     })
     .addCase(entity.failure, state => {
       state.status = 'FAILURE';
