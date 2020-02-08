@@ -1,5 +1,5 @@
 import { createReducer, createAction } from '@reduxjs/toolkit';
-import { Game } from 'model/game';
+import { Game } from 'models/game';
 import { createEntity } from 'utils/redux';
 import * as gameApi from 'api/game';
 

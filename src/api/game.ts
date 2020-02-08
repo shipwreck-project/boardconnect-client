@@ -1,5 +1,5 @@
 import fetcher from 'utils/fetcher';
-import { Game } from 'model/game';
+import { Game } from 'models/game';
 
 export type SearchGameQuery = {
   name: string;
