@@ -3,16 +3,14 @@ import { Layout, Form, Icon, Button } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { LOGIN } from 'store/auth';
 import { createAction } from '@reduxjs/toolkit';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 
 const actions = {
   login: createAction(LOGIN, (payload: { token: string }) => ({ payload })),
 };
 
 const useLogin = () => {
-  const isLogined = useSelector(
-    (state: StoreState) => !!state.auth.response?.user,
-  );
+  const isLogined = useSelector((state: StoreState) => !!state.auth.user);
   const dispatch = useDispatch();
 
   const login = (token: string) => {
