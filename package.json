@@ -18,7 +18,7 @@
     "antd": "^3.26.6",
     "axios": "^0.19.2",
     "lodash.debounce": "^4.0.8",
-    "next": "^9.1.7",
+    "next": "^9.3.2",
     "next-redux-wrapper": "^4.0.1",
     "query-string": "^6.10.1",
     "react": "^16.12.0",
